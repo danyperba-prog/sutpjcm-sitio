@@ -1,0 +1,33 @@
+Área,Icono,Nombre,Cargo,Extensión,Correo
+Comité Ejecutivo,ti-crown,[Nombre del Secretario General],Secretario/a General,Ext. 101,secretaria.general@sutpjcm.org.mx
+Comité Ejecutivo,ti-crown,[Nombre],Secretario/a del Interior,Ext. 102,interior@sutpjcm.org.mx
+Comité Ejecutivo,ti-crown,[Nombre],Secretario/a del Exterior,Ext. 103,exterior@sutpjcm.org.mx
+Comité Ejecutivo,ti-crown,[Nombre],Secretario/a de Actas y Acuerdos,Ext. 104,actas@sutpjcm.org.mx
+Secretarías Operativas,ti-building,[Nombre],Organización y Estadística,Ext. 201,organizacion@sutpjcm.org.mx
+Secretarías Operativas,ti-building,[Nombre],Finanzas,Ext. 202,finanzas@sutpjcm.org.mx
+Secretarías Operativas,ti-building,[Nombre],Prensa y Propaganda,Ext. 203,prensa@sutpjcm.org.mx
+Secretarías Operativas,ti-building,[Nombre],Informática,Ext. 204,informatica@sutpjcm.org.mx
+Secretarías Operativas,ti-building,[Nombre],Comunicación Social,Ext. 205,comunicacion@sutpjcm.org.mx
+Secretarías Operativas,ti-building,[Nombre],Vigilancia,Ext. 206,vigilancia@sutpjcm.org.mx
+Trabajo y Justicia,ti-gavel,[Nombre],Trabajo y Enlace Legislativo,Ext. 301,trabajo@sutpjcm.org.mx
+Trabajo y Justicia,ti-gavel,[Nombre],Conflictos,Ext. 302,conflictos@sutpjcm.org.mx
+Trabajo y Justicia,ti-gavel,[Nombre],Acción Laboral,Ext. 303,accion.laboral@sutpjcm.org.mx
+Trabajo y Justicia,ti-gavel,[Nombre],Acción Jurídica,Ext. 304,juridico@sutpjcm.org.mx
+Bienestar Social,ti-heart,[Nombre],Acción Social,Ext. 401,accion.social@sutpjcm.org.mx
+Bienestar Social,ti-heart,[Nombre],Desarrollo Social,Ext. 402,desarrollo.social@sutpjcm.org.mx
+Bienestar Social,ti-heart,[Nombre],Previsión Social,Ext. 403,prevision@sutpjcm.org.mx
+Bienestar Social,ti-heart,[Nombre],Jubilaciones y Pensiones,Ext. 405,pensiones@sutpjcm.org.mx
+Bienestar Social,ti-heart,[Nombre],Vivienda y Habitación,Ext. 406,vivienda@sutpjcm.org.mx
+Desarrollo y Capacitación,ti-school,[Nombre],Capacitación Profesional,Ext. 501,capacitacion@sutpjcm.org.mx
+Desarrollo y Capacitación,ti-school,[Nombre],Educación,Ext. 503,educacion@sutpjcm.org.mx
+Grupos Específicos,ti-users-group,[Nombre],Acción Femenil,Ext. 601,femenil@sutpjcm.org.mx
+Grupos Específicos,ti-users-group,[Nombre],Acción Juvenil,Ext. 602,juvenil@sutpjcm.org.mx
+Grupos Específicos,ti-users-group,[Nombre],Equidad y Género,Ext. 604,genero@sutpjcm.org.mx
+Fomento y Servicios,ti-star,[Nombre],Deportes,Ext. 701,deportes@sutpjcm.org.mx
+Fomento y Servicios,ti-star,[Nombre],Turismo,Ext. 704,turismo@sutpjcm.org.mx
+Fomento y Servicios,ti-star,[Nombre],Promoción Cultural,Ext. 705,cultura@sutpjcm.org.mx
+Relaciones y Enlace,ti-network,[Nombre],Relaciones Públicas,Ext. 802,relaciones.publicas@sutpjcm.org.mx
+Relaciones y Enlace,ti-network,[Nombre],Enlace Sindical,Ext. 803,enlace@sutpjcm.org.mx
+Seguridad,ti-shield,[Nombre],Riesgos de Trabajo,Ext. 901,riesgos@sutpjcm.org.mx
+Seguridad,ti-shield,[Nombre],Seguridad e Higiene,Ext. 902,seguridad@sutpjcm.org.mx
+Seguridad,ti-shield,[Nombre],Protección Civil,Ext. 903,proteccion.civil@sutpjcm.org.mx
