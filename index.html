@@ -1329,7 +1329,7 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 // CONFIGURACIÓN GOOGLE SHEETS
 // Pega aquí el ID de tu hoja de Google Sheets (está en la URL)
 // Ejemplo: https://docs.google.com/spreadsheets/d/AQUI_VA_EL_ID/edit
-const SHEET_ID = https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0XHG12g9cfyzOGfBCmrwg_MCnG5DH2L1zOYX7UhCxjMmjS8plJgXZPTjl9H2rLEE9aMRzxUTlgclw/pub?output=csv
+const SHEET_ID = '2PACX-1vQ0XHG12g9cfyzOGfBCmrwg_MCnG5DH2L1zOYX7UhCxjMmjS8plJgXZPTjl9H2rLEE9aMRzxUTlgclw';
 const SHEET_BLOG = 'Blog';
 const SHEET_CONV = 'Convocatorias';
 const SHEET_DIR = 'Directorio';
@@ -1358,7 +1358,7 @@ function parseCSV(text){
   });
 }
 function sheetUrl(tab){
-  return `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(tab)}`;
+  return `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pub?output=csv&sheet=${encodeURIComponent(tab)}`;
 }
 
 async function cargarBlog(){
@@ -1509,7 +1509,7 @@ const convocatoriasData=[
    desc:"Proceso electoral democrático interno para la renovación del Comité Ejecutivo del SUTPJCM 2025-2028. Todos los agremiados activos tienen derecho a votar y a postularse en planilla.",
    req:["Para votar: ser agremiado activo al corriente","Para postularse: mínimo 3 años de antigüedad","Para postularse: sin sanciones en los últimos 2 años","Registro de planilla completa ante la Comisión Electoral","Carta de aceptación de todos los integrantes","Plataforma de gobierno (máximo 10 cuartillas)"],
    ben:["Participación directa en la democracia sindical","Renovación de liderazgo con base en propuestas","Transparencia garantizada por Comisión Electoral independiente","Fortalecimiento de la representatividad sindical"],
-   faq:[{q:"¿Cuándo son las elecciones?",a:"El 28 de mayo de 2025 en el auditorio sindical, 9:00–17:00 h."},{q:"¿Puedo votar si estoy en comisión?",a:"Sí, con credencial de agremiado vigente el día de la jornada."},{q:"¿Cuántos cargos integran el Comité?",a:"9 cargos: Secretaría General, Organización, Finanzas, Actas, Educación, Acción Social, Derechos Humanos, Conflictos y Deportes."},{q:"¿Dónde consulto el padrón electoral?",a:"En oficinas sindicales y el portal a partir del 5 de mayo de 2025."}],
+   faq:[{q:"¿Cuándo son las elecciones?",a:"El 28 de mayo de 2025 en el auditorio sindical, 9:00–17:00 h."},{q:"¿Puedo votar si estoy en comisión?",a:"Sí, con credencial de agremiado vigente el día de la jornada."},{q:"¿Cuántos cargos integran el Comité?",a:"38 secretarías integran el Comité Ejecutivo, encabezadas por el Secretario General."},{q:"¿Dónde consulto el padrón electoral?",a:"En oficinas sindicales y el portal a partir del 5 de mayo de 2025."}],
    contacto:[{icono:"ti-user",label:"Responsable",valor:"Comisión Electoral SUTPJCM"},{icono:"ti-phone",label:"Teléfono",valor:"55 1234 5678 Ext. 105"},{icono:"ti-mail",label:"Correo",valor:"electoral@sutpjcm.org.mx",link:true},{icono:"ti-map-pin",label:"Lugar de votación",valor:"Auditorio SUTPJCM, Av. Juárez 8"}],
    linkAplicar:"#",formulario:"docs/formulario-planilla-2025.pdf",oficio:"docs/oficio-electoral-2025.pdf",numOficio:"SUTPJCM/CE/2025/001"},
   {titulo:"Programa vacacional para agremiados — Verano 2025",estatus:"proxima",cierre:"Inscripciones: 1 al 30 de junio de 2025",
@@ -1532,7 +1532,7 @@ const juridicoData=[
    archivo:"docs/ley-trabajadores-servicio-estado.pdf"},
   {titulo:"Estatuto Sindical del SUTPJCM",sub:"Norma interna que rige la vida democrática del sindicato",tipo:"int",icono:"ti-file-certificate",
    desc:"Documento fundacional que rige la organización, funcionamiento y vida democrática interna del SUTPJCM. Establece derechos, obligaciones, estructura directiva y procesos electorales.",
-   arts:[{num:"Capítulo I — Constitución",tit:"Denominación y domicilio",txt:"El Sindicato Único de Trabajadores del Poder Judicial de la Ciudad de México, constituido el 15 de marzo de 1997, tiene su domicilio en la Ciudad de México.",gold:true},{num:"Capítulo II — Derechos",tit:"Derechos de los agremiados",txt:"Son derechos de los agremiados: votar y ser votado; participar en asambleas con voz y voto; recibir beneficios y prestaciones; ser representado ante cualquier conflicto laboral."},{num:"Capítulo IV — Comité Ejecutivo",tit:"Integración del Comité Ejecutivo",txt:"El Comité Ejecutivo se integra por nueve secretarías: General, Organización, Finanzas, Actas, Educación Sindical, Acción Social, Derechos Humanos, Conflictos y Deportes y Cultura.",gold:true},{num:"Capítulo VI — Elecciones",tit:"Proceso electoral interno",txt:"Las elecciones se realizarán cada cuatro años mediante voto universal, libre, directo y secreto. La convocatoria deberá publicarse con al menos 60 días de anticipación."},{num:"Capítulo VII — Finanzas",tit:"Cuotas sindicales",txt:"Los agremiados cubrirán una cuota sindical ordinaria equivalente al 1% de su salario mensual neto, descontada directamente vía nómina."}],
+   arts:[{num:"Capítulo I — Constitución",tit:"Denominación y domicilio",txt:"El Sindicato Único de Trabajadores del Poder Judicial de la Ciudad de México, constituido el 15 de marzo de 1997, tiene su domicilio en la Ciudad de México.",gold:true},{num:"Capítulo II — Derechos",tit:"Derechos de los agremiados",txt:"Son derechos de los agremiados: votar y ser votado; participar en asambleas con voz y voto; recibir beneficios y prestaciones; ser representado ante cualquier conflicto laboral."},{num:"Capítulo IV — Comité Ejecutivo",tit:"Integración del Comité Ejecutivo",txt:"El Comité Ejecutivo se integra por 38 secretarías encabezadas por el Secretario General, abarcando áreas de organización, trabajo, bienestar social, capacitación, grupos específicos, fomento, relaciones y seguridad.",gold:true},{num:"Capítulo VI — Elecciones",tit:"Proceso electoral interno",txt:"Las elecciones se realizarán cada cuatro años mediante voto universal, libre, directo y secreto. La convocatoria deberá publicarse con al menos 60 días de anticipación."},{num:"Capítulo VII — Finanzas",tit:"Cuotas sindicales",txt:"Los agremiados cubrirán una cuota sindical ordinaria equivalente al 1% de su salario mensual neto, descontada directamente vía nómina."}],
    archivo:"docs/estatuto-sindical-sutpjcm.pdf"},
   {titulo:"Contrato Colectivo de Trabajo vigente",sub:"Condiciones laborales pactadas 2025",tipo:"int",icono:"ti-handshake",
    desc:"Instrumento jurídico que establece las condiciones de trabajo pactadas entre el SUTPJCM y el Tribunal Superior de Justicia de la CDMX.",
@@ -1559,75 +1559,59 @@ const notasData=[
 
 const directorioData=[
   {area:"Comité Ejecutivo",icon:"ti-crown",personas:[
-    {nombre:"[Nombre del Secretario General]",cargo:"Secretario/a General",ext:"Ext. 101",correo:"secretaria.general@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Secretario/a del Interior",ext:"Ext. 102",correo:"interior@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Secretario/a del Exterior",ext:"Ext. 103",correo:"exterior@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Secretario/a de Actas y Acuerdos",ext:"Ext. 104",correo:"actas@sutpjcm.org.mx"}
-  ]},
-  {area:"Secretarías Operativas",icon:"ti-building",personas:[
-    {nombre:"[Nombre]",cargo:"Organización y Estadística",ext:"Ext. 201",correo:"organizacion@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Finanzas",ext:"Ext. 202",correo:"finanzas@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Prensa y Propaganda",ext:"Ext. 203",correo:"prensa@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Informática",ext:"Ext. 204",correo:"informatica@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Comunicación Social",ext:"Ext. 205",correo:"comunicacion@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Vigilancia",ext:"Ext. 206",correo:"vigilancia@sutpjcm.org.mx"}
+    {nombre:"Víctor Rodrigo Garduño Lañas",cargo:"Secretario General",ext:"Ext. 101",correo:"secretaria.general@sutpjcm.org.mx"},
+    {nombre:"José Gerardo Márquez Mollinedo",cargo:"Secretario del Interior",ext:"Ext. 102",correo:"interior@sutpjcm.org.mx"},
+    {nombre:"Imanol Tellez García",cargo:"Secretario del Exterior",ext:"Ext. 103",correo:"exterior@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaría de Enlace Social",ext:"Ext. 104",correo:"enlace.social@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaría de Organización y Estadística",ext:"Ext. 105",correo:"organizacion@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaría de Trabajo y Enlace Legislativo",ext:"Ext. 106",correo:"trabajo@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretario de Enlace Político con el Gob. CDMX",ext:"Ext. 107",correo:"enlace.politico@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretario de Actas y Acuerdos",ext:"Ext. 108",correo:"actas@sutpjcm.org.mx"}
   ]},
   {area:"Trabajo y Justicia",icon:"ti-gavel",personas:[
-    {nombre:"[Nombre]",cargo:"Trabajo y Enlace Legislativo",ext:"Ext. 301",correo:"trabajo@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Conflictos",ext:"Ext. 302",correo:"conflictos@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Acción Laboral",ext:"Ext. 303",correo:"accion.laboral@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Acción Jurídica",ext:"Ext. 304",correo:"juridico@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Condiciones Generales de Trabajo",ext:"Ext. 305",correo:"condiciones@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Recursos Humanos",ext:"Ext. 306",correo:"rrhh@sutpjcm.org.mx"}
+    {nombre:"Por designar",cargo:"Secretario de Conflictos",ext:"Ext. 201",correo:"conflictos@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretario de Acción Laboral",ext:"Ext. 202",correo:"accion.laboral@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretario de Acción Jurídica",ext:"Ext. 203",correo:"juridico@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaría de Condiciones Generales de Trabajo",ext:"Ext. 204",correo:"condiciones@sutpjcm.org.mx"}
   ]},
-  {area:"Bienestar Social",icon:"ti-heart",personas:[
-    {nombre:"[Nombre]",cargo:"Acción Social",ext:"Ext. 401",correo:"accion.social@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Desarrollo Social",ext:"Ext. 402",correo:"desarrollo.social@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Previsión Social",ext:"Ext. 403",correo:"prevision@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Asistencia Social",ext:"Ext. 404",correo:"asistencia@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Jubilaciones y Pensiones",ext:"Ext. 405",correo:"pensiones@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Vivienda y Habitación",ext:"Ext. 406",correo:"vivienda@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Patrimonio Sindical",ext:"Ext. 407",correo:"patrimonio@sutpjcm.org.mx"}
+  {area:"Comunicación y Prensa",icon:"ti-speakerphone",personas:[
+    {nombre:"Por designar",cargo:"Secretario de Prensa y Propaganda",ext:"Ext. 301",correo:"prensa@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretario de Comunicación Social",ext:"Ext. 302",correo:"comunicacion@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de Divulgación Ideológica",ext:"Ext. 303",correo:"divulgacion@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretario de Informática",ext:"Ext. 304",correo:"informatica@sutpjcm.org.mx"}
   ]},
-  {area:"Desarrollo y Capacitación",icon:"ti-school",personas:[
-    {nombre:"[Nombre]",cargo:"Capacitación Profesional",ext:"Ext. 501",correo:"capacitacion@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Capacitación Sindical y Laboral",ext:"Ext. 502",correo:"cap.sindical@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Educación",ext:"Ext. 503",correo:"educacion@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Iniciativas y Proyectos",ext:"Ext. 504",correo:"proyectos@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Planeación y Evaluación",ext:"Ext. 505",correo:"planeacion@sutpjcm.org.mx"}
+  {area:"Bienestar y Prestaciones",icon:"ti-heart",personas:[
+    {nombre:"Por designar",cargo:"Secretaría de Promociones Económicas",ext:"Ext. 401",correo:"promociones@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretario de Estímulos y Recompensas",ext:"Ext. 402",correo:"estimulos@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretario de Turismo",ext:"Ext. 403",correo:"turismo@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de Promoción y Cultura",ext:"Ext. 404",correo:"cultura@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretario de Patrimonio Sindical",ext:"Ext. 405",correo:"patrimonio@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretario de Prestaciones Económicas",ext:"Ext. 406",correo:"prestaciones@sutpjcm.org.mx"}
+  ]},
+  {area:"Educación y Capacitación",icon:"ti-school",personas:[
+    {nombre:"Por designar",cargo:"Secretaria de Educación",ext:"Ext. 501",correo:"educacion@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de Capacitación Sindical y Laboral",ext:"Ext. 502",correo:"cap.sindical@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de Vinculación",ext:"Ext. 503",correo:"vinculacion@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de Planeación",ext:"Ext. 504",correo:"planeacion@sutpjcm.org.mx"}
   ]},
   {area:"Grupos Específicos",icon:"ti-users-group",personas:[
-    {nombre:"[Nombre]",cargo:"Acción Femenil",ext:"Ext. 601",correo:"femenil@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Acción Juvenil",ext:"Ext. 602",correo:"juvenil@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Desarrollo de la Mujer",ext:"Ext. 603",correo:"mujer@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Equidad y Género",ext:"Ext. 604",correo:"genero@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"La Niñez",ext:"Ext. 605",correo:"ninez@sutpjcm.org.mx"}
-  ]},
-  {area:"Fomento y Servicios",icon:"ti-star",personas:[
-    {nombre:"[Nombre]",cargo:"Deportes",ext:"Ext. 701",correo:"deportes@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Promociones Económicas",ext:"Ext. 702",correo:"promociones@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Estímulos y Recompensas",ext:"Ext. 703",correo:"estimulos@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Turismo",ext:"Ext. 704",correo:"turismo@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Promoción Cultural",ext:"Ext. 705",correo:"cultura@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Abasto y Subsistencia Popular",ext:"Ext. 706",correo:"abasto@sutpjcm.org.mx"}
+    {nombre:"Por designar",cargo:"Secretaría de Acción Femenil",ext:"Ext. 601",correo:"femenil@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de Desarrollo de la Mujer",ext:"Ext. 602",correo:"mujer@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de Equidad y Género",ext:"Ext. 603",correo:"genero@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de la Niñez",ext:"Ext. 604",correo:"ninez@sutpjcm.org.mx"}
   ]},
   {area:"Relaciones y Enlace",icon:"ti-network",personas:[
-    {nombre:"[Nombre]",cargo:"Acción Política y Relaciones Sindicales",ext:"Ext. 801",correo:"relaciones@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Relaciones Públicas",ext:"Ext. 802",correo:"relaciones.publicas@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Enlace Sindical",ext:"Ext. 803",correo:"enlace@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Enlace Político con el Gobierno de la CDMX",ext:"Ext. 804",correo:"enlace.politico@sutpjcm.org.mx"}
+    {nombre:"Por designar",cargo:"Secretario de Enlace Sindical",ext:"Ext. 701",correo:"enlace@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de Recursos Humanos",ext:"Ext. 702",correo:"rrhh@sutpjcm.org.mx"}
   ]},
-  {area:"Seguridad",icon:"ti-shield",personas:[
-    {nombre:"[Nombre]",cargo:"Riesgos de Trabajo",ext:"Ext. 901",correo:"riesgos@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Seguridad e Higiene",ext:"Ext. 902",correo:"seguridad@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Protección Civil",ext:"Ext. 903",correo:"proteccion.civil@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Enfermedades no Profesionales",ext:"Ext. 904",correo:"salud@sutpjcm.org.mx"}
-  ]},
-  {area:"Otras Secretarías",icon:"ti-dots-circle-horizontal",personas:[
-    {nombre:"[Nombre]",cargo:"Transparencia",ext:"Ext. 1001",correo:"transparencia@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Derechos Humanos",ext:"Ext. 1002",correo:"ddhh@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Divulgación Ideológica",ext:"Ext. 1003",correo:"divulgacion@sutpjcm.org.mx"},
-    {nombre:"[Nombre]",cargo:"Tabuladores y Catálogo de Puestos",ext:"Ext. 1004",correo:"tabuladores@sutpjcm.org.mx"}
+  {area:"Seguridad y Transparencia",icon:"ti-shield",personas:[
+    {nombre:"Por designar",cargo:"Secretario de Transparencia",ext:"Ext. 801",correo:"transparencia@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretario de Riesgo de Trabajo",ext:"Ext. 802",correo:"riesgos@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de Seguridad e Higiene",ext:"Ext. 803",correo:"seguridad@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de Vigilancia",ext:"Ext. 804",correo:"vigilancia@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de Derechos Humanos",ext:"Ext. 805",correo:"ddhh@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretaria de Equidad y Género",ext:"Ext. 806",correo:"genero2@sutpjcm.org.mx"},
+    {nombre:"Por designar",cargo:"Secretario de Protección Civil",ext:"Ext. 807",correo:"proteccion.civil@sutpjcm.org.mx"}
   ]}
 ];
 

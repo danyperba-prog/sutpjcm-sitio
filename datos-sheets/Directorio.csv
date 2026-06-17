@@ -1,33 +1,39 @@
 Área,Icono,Nombre,Cargo,Extensión,Correo
-Comité Ejecutivo,ti-crown,[Nombre del Secretario General],Secretario/a General,Ext. 101,secretaria.general@sutpjcm.org.mx
-Comité Ejecutivo,ti-crown,[Nombre],Secretario/a del Interior,Ext. 102,interior@sutpjcm.org.mx
-Comité Ejecutivo,ti-crown,[Nombre],Secretario/a del Exterior,Ext. 103,exterior@sutpjcm.org.mx
-Comité Ejecutivo,ti-crown,[Nombre],Secretario/a de Actas y Acuerdos,Ext. 104,actas@sutpjcm.org.mx
-Secretarías Operativas,ti-building,[Nombre],Organización y Estadística,Ext. 201,organizacion@sutpjcm.org.mx
-Secretarías Operativas,ti-building,[Nombre],Finanzas,Ext. 202,finanzas@sutpjcm.org.mx
-Secretarías Operativas,ti-building,[Nombre],Prensa y Propaganda,Ext. 203,prensa@sutpjcm.org.mx
-Secretarías Operativas,ti-building,[Nombre],Informática,Ext. 204,informatica@sutpjcm.org.mx
-Secretarías Operativas,ti-building,[Nombre],Comunicación Social,Ext. 205,comunicacion@sutpjcm.org.mx
-Secretarías Operativas,ti-building,[Nombre],Vigilancia,Ext. 206,vigilancia@sutpjcm.org.mx
-Trabajo y Justicia,ti-gavel,[Nombre],Trabajo y Enlace Legislativo,Ext. 301,trabajo@sutpjcm.org.mx
-Trabajo y Justicia,ti-gavel,[Nombre],Conflictos,Ext. 302,conflictos@sutpjcm.org.mx
-Trabajo y Justicia,ti-gavel,[Nombre],Acción Laboral,Ext. 303,accion.laboral@sutpjcm.org.mx
-Trabajo y Justicia,ti-gavel,[Nombre],Acción Jurídica,Ext. 304,juridico@sutpjcm.org.mx
-Bienestar Social,ti-heart,[Nombre],Acción Social,Ext. 401,accion.social@sutpjcm.org.mx
-Bienestar Social,ti-heart,[Nombre],Desarrollo Social,Ext. 402,desarrollo.social@sutpjcm.org.mx
-Bienestar Social,ti-heart,[Nombre],Previsión Social,Ext. 403,prevision@sutpjcm.org.mx
-Bienestar Social,ti-heart,[Nombre],Jubilaciones y Pensiones,Ext. 405,pensiones@sutpjcm.org.mx
-Bienestar Social,ti-heart,[Nombre],Vivienda y Habitación,Ext. 406,vivienda@sutpjcm.org.mx
-Desarrollo y Capacitación,ti-school,[Nombre],Capacitación Profesional,Ext. 501,capacitacion@sutpjcm.org.mx
-Desarrollo y Capacitación,ti-school,[Nombre],Educación,Ext. 503,educacion@sutpjcm.org.mx
-Grupos Específicos,ti-users-group,[Nombre],Acción Femenil,Ext. 601,femenil@sutpjcm.org.mx
-Grupos Específicos,ti-users-group,[Nombre],Acción Juvenil,Ext. 602,juvenil@sutpjcm.org.mx
-Grupos Específicos,ti-users-group,[Nombre],Equidad y Género,Ext. 604,genero@sutpjcm.org.mx
-Fomento y Servicios,ti-star,[Nombre],Deportes,Ext. 701,deportes@sutpjcm.org.mx
-Fomento y Servicios,ti-star,[Nombre],Turismo,Ext. 704,turismo@sutpjcm.org.mx
-Fomento y Servicios,ti-star,[Nombre],Promoción Cultural,Ext. 705,cultura@sutpjcm.org.mx
-Relaciones y Enlace,ti-network,[Nombre],Relaciones Públicas,Ext. 802,relaciones.publicas@sutpjcm.org.mx
-Relaciones y Enlace,ti-network,[Nombre],Enlace Sindical,Ext. 803,enlace@sutpjcm.org.mx
-Seguridad,ti-shield,[Nombre],Riesgos de Trabajo,Ext. 901,riesgos@sutpjcm.org.mx
-Seguridad,ti-shield,[Nombre],Seguridad e Higiene,Ext. 902,seguridad@sutpjcm.org.mx
-Seguridad,ti-shield,[Nombre],Protección Civil,Ext. 903,proteccion.civil@sutpjcm.org.mx
+Comité Ejecutivo,ti-crown,Víctor Rodrigo Garduño Lañas,Secretario General,Ext. 101,secretaria.general@sutpjcm.org.mx
+Comité Ejecutivo,ti-crown,José Gerardo Márquez Mollinedo,Secretario del Interior,Ext. 102,interior@sutpjcm.org.mx
+Comité Ejecutivo,ti-crown,Imanol Tellez García,Secretario del Exterior,Ext. 103,exterior@sutpjcm.org.mx
+Comité Ejecutivo,ti-crown,Por designar,Secretaría de Enlace Social,Ext. 104,enlace.social@sutpjcm.org.mx
+Comité Ejecutivo,ti-crown,Por designar,Secretaría de Organización y Estadística,Ext. 105,organizacion@sutpjcm.org.mx
+Comité Ejecutivo,ti-crown,Por designar,Secretaría de Trabajo y Enlace Legislativo,Ext. 106,trabajo@sutpjcm.org.mx
+Comité Ejecutivo,ti-crown,Por designar,Secretario de Enlace Político con el Gob. CDMX,Ext. 107,enlace.politico@sutpjcm.org.mx
+Comité Ejecutivo,ti-crown,Por designar,Secretario de Actas y Acuerdos,Ext. 108,actas@sutpjcm.org.mx
+Trabajo y Justicia,ti-gavel,Por designar,Secretario de Conflictos,Ext. 201,conflictos@sutpjcm.org.mx
+Trabajo y Justicia,ti-gavel,Por designar,Secretario de Acción Laboral,Ext. 202,accion.laboral@sutpjcm.org.mx
+Trabajo y Justicia,ti-gavel,Por designar,Secretario de Acción Jurídica,Ext. 203,juridico@sutpjcm.org.mx
+Trabajo y Justicia,ti-gavel,Por designar,Secretaría de Condiciones Generales de Trabajo,Ext. 204,condiciones@sutpjcm.org.mx
+Comunicación y Prensa,ti-speakerphone,Por designar,Secretario de Prensa y Propaganda,Ext. 301,prensa@sutpjcm.org.mx
+Comunicación y Prensa,ti-speakerphone,Por designar,Secretario de Comunicación Social,Ext. 302,comunicacion@sutpjcm.org.mx
+Comunicación y Prensa,ti-speakerphone,Por designar,Secretaria de Divulgación Ideológica,Ext. 303,divulgacion@sutpjcm.org.mx
+Comunicación y Prensa,ti-speakerphone,Por designar,Secretario de Informática,Ext. 304,informatica@sutpjcm.org.mx
+Bienestar y Prestaciones,ti-heart,Por designar,Secretaría de Promociones Económicas,Ext. 401,promociones@sutpjcm.org.mx
+Bienestar y Prestaciones,ti-heart,Por designar,Secretario de Estímulos y Recompensas,Ext. 402,estimulos@sutpjcm.org.mx
+Bienestar y Prestaciones,ti-heart,Por designar,Secretario de Turismo,Ext. 403,turismo@sutpjcm.org.mx
+Bienestar y Prestaciones,ti-heart,Por designar,Secretaria de Promoción y Cultura,Ext. 404,cultura@sutpjcm.org.mx
+Bienestar y Prestaciones,ti-heart,Por designar,Secretario de Patrimonio Sindical,Ext. 405,patrimonio@sutpjcm.org.mx
+Bienestar y Prestaciones,ti-heart,Por designar,Secretario de Prestaciones Económicas,Ext. 406,prestaciones@sutpjcm.org.mx
+Educación y Capacitación,ti-school,Por designar,Secretaria de Educación,Ext. 501,educacion@sutpjcm.org.mx
+Educación y Capacitación,ti-school,Por designar,Secretaria de Capacitación Sindical y Laboral,Ext. 502,cap.sindical@sutpjcm.org.mx
+Educación y Capacitación,ti-school,Por designar,Secretaria de Vinculación,Ext. 503,vinculacion@sutpjcm.org.mx
+Educación y Capacitación,ti-school,Por designar,Secretaria de Planeación,Ext. 504,planeacion@sutpjcm.org.mx
+Grupos Específicos,ti-users-group,Por designar,Secretaría de Acción Femenil,Ext. 601,femenil@sutpjcm.org.mx
+Grupos Específicos,ti-users-group,Por designar,Secretaria de Desarrollo de la Mujer,Ext. 602,mujer@sutpjcm.org.mx
+Grupos Específicos,ti-users-group,Por designar,Secretaria de Equidad y Género,Ext. 603,genero@sutpjcm.org.mx
+Grupos Específicos,ti-users-group,Por designar,Secretaria de la Niñez,Ext. 604,ninez@sutpjcm.org.mx
+Relaciones y Enlace,ti-network,Por designar,Secretario de Enlace Sindical,Ext. 701,enlace@sutpjcm.org.mx
+Relaciones y Enlace,ti-network,Por designar,Secretaria de Recursos Humanos,Ext. 702,rrhh@sutpjcm.org.mx
+Seguridad y Transparencia,ti-shield,Por designar,Secretario de Transparencia,Ext. 801,transparencia@sutpjcm.org.mx
+Seguridad y Transparencia,ti-shield,Por designar,Secretario de Riesgo de Trabajo,Ext. 802,riesgos@sutpjcm.org.mx
+Seguridad y Transparencia,ti-shield,Por designar,Secretaria de Seguridad e Higiene,Ext. 803,seguridad@sutpjcm.org.mx
+Seguridad y Transparencia,ti-shield,Por designar,Secretaria de Vigilancia,Ext. 804,vigilancia@sutpjcm.org.mx
+Seguridad y Transparencia,ti-shield,Por designar,Secretaria de Derechos Humanos,Ext. 805,ddhh@sutpjcm.org.mx
+Seguridad y Transparencia,ti-shield,Por designar,Secretario de Protección Civil,Ext. 807,proteccion.civil@sutpjcm.org.mx
