@@ -1382,7 +1382,7 @@ async function cargarBlog(){
       fallbackImg:'img/blog.avif',
       read:(r['Lectura']||'3')+' min de lectura',
       featured:['si','sí','SI','SÍ','1'].includes(r['Destacado']||''),
-      body:(r['Contenido']||r['Resumen']||'').split('\n').filter(p=>p.trim()).map(p=>`<p>${p}</p>`).join('')||`<p>${r['Resumen']||''}</p>`
+      body:['Párrafo1','Párrafo2','Párrafo3','Párrafo4','Párrafo5'].map(k=>r[k]||'').filter(p=>p.trim()).map(p=>`<p>${p}</p>`).join('')||`<p>${r['Resumen']||''}</p>`
     }));
     return true;
   }catch(e){return false;}
