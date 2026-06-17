@@ -1929,7 +1929,7 @@ function toggleJuridico(i){
   if(!isOpen){card.classList.add('open');body.style.display='block';}
 }
 
-function renderEquipo(){document.getElementById('equipo-grid').innerHTML=directorioData[0].personas.map(p=>`<div class="eq-card"><div class="eq-av">${initials(p.nombre)}</div><h4>${p.nombre}</h4><p>${p.cargo}</p></div>`).join('');}
+function renderEquipo(){const sec=directorioData.find(s=>s.area==='Comité Ejecutivo')||directorioData[0];if(!sec||!sec.personas)return;document.getElementById('equipo-grid').innerHTML=sec.personas.map(p=>`<div class="eq-card"><div class="eq-av">${initials(p.nombre)}</div><h4>${p.nombre}</h4><p>${p.cargo}</p></div>`).join('');}
 let dirFiltro='todos';
 function renderDirectorio(){
   const filtered=dirFiltro==='todos'?directorioData:directorioData.filter(s=>s.area===dirFiltro);
