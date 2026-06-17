@@ -2039,6 +2039,15 @@ async function init(){
   renderJuridico();
   renderEquipo();renderDirectorio();
   renderTimeline();renderNotas();
+  // Hash routing — corre después de cargar datos
+  const _hash=window.location.hash;
+  if(_hash&&_hash.match(/^#conv-\d+$/)){
+    const _idx=parseInt(_hash.slice(6));
+    if(!isNaN(_idx)&&_idx>=0&&_idx<convocatoriasData.length) showConvDetailPage(_idx);
+  } else if(_hash&&_hash.match(/^#post-\d+$/)){
+    const _idx=parseInt(_hash.slice(6));
+    if(!isNaN(_idx)&&_idx>=0&&_idx<blogData.length) showPostPage(_idx);
+  }
 }
 init();
 // Formulario de contacto
@@ -2048,15 +2057,6 @@ function enviarContacto(e){
   const s=document.getElementById('cont-success');
   s.style.display='flex';
   setTimeout(()=>{s.style.display='none';document.getElementById('cont-form').style.display='block';document.getElementById('cont-form').reset();},5000);
-}
-// Hash routing
-const _hash=window.location.hash;
-if(_hash&&_hash.match(/^#conv-\d+$/)){
-  const _idx=parseInt(_hash.slice(6));
-  if(!isNaN(_idx)&&_idx>=0&&_idx<convocatoriasData.length) showConvDetailPage(_idx);
-} else if(_hash&&_hash.match(/^#post-\d+$/)){
-  const _idx=parseInt(_hash.slice(6));
-  if(!isNaN(_idx)&&_idx>=0&&_idx<blogData.length) showPostPage(_idx);
 }
 </script>
 </body>
