@@ -1365,9 +1365,13 @@ async function cargarBlog(){
   try{
     const res=await fetch(sheetUrl(SHEET_BLOG));
     if(!res.ok)return false;
-    const rows=parseCSV(await res.text());
+    const text=await res.text();
+    const rows=parseCSV(text.replace(/^﻿/,''));
+    console.log('Blog rows:',rows.length, rows.length?Object.keys(rows[0]):[]);
     if(!rows.length)return false;
-    blogData=rows.filter(r=>r['Título']).map(r=>({
+    const filtered=rows.filter(r=>r['Título']||r[Object.keys(r).find(k=>k.includes('tulo')||k.includes('Tulo'))]);
+    if(!filtered.length){console.log('Sin filas con Título, keys:',Object.keys(rows[0]));return false;}
+    blogData=filtered.map(r=>({
       tag:r['Categoría']||'Comunicado',
       date:r['Fecha']||'',
       title:r['Título']||'',
@@ -1432,7 +1436,7 @@ async function cargarDirectorio(){
 
 // DATOS — datos de respaldo (se usan si Google Sheets no está configurado)
 // ============================================================
-const blogData=[
+let blogData=[
   {tag:"Comunicado",date:"12 mayo 2025",title:"Resultados de la Asamblea General Ordinaria",excerpt:"Se presentan los acuerdos tomados en la asamblea del pasado 10 de mayo, incluyendo la aprobación del presupuesto anual y la renovación de comisiones internas.",author:"Comité Ejecutivo",authorDesc:"Órgano de gobierno del SUTPJCM responsable de la dirección y representación del sindicato.",img:"img/asamblea.png",fallbackImg:"img/oficina.png",featured:true,read:"4 min de lectura",
    body:`<p>El pasado 10 de mayo de 2025 se llevó a cabo la <strong>Asamblea General Ordinaria del SUTPJCM</strong> en el Auditorio Sindical, con la participación de más de 800 agremiados.</p>
    <h2>Acuerdos principales</h2>
@@ -1497,7 +1501,7 @@ const tramitesData=[
    docs:[{tipo:"form",label:"Solicitar constancia en línea",url:"#"},{tipo:"circ",label:"Circular sobre tipos de constancias",archivo:"docs/circular-constancias-2025.pdf"}]}
 ];
 
-const convocatoriasData=[
+let convocatoriasData=[
   {titulo:"Becas de capacitación profesional 2025",estatus:"vigente",cierre:"30 de junio de 2025",
    desc:"Convocatoria para agremiados activos que deseen acceder a becas para posgrado, diplomados y cursos de especialización en instituciones convenidas con el SUTPJCM.",
    req:["Ser agremiado activo con al menos 1 año de antigüedad","Cuotas al corriente","Comprobante de inscripción en la institución educativa","Promedio mínimo de 8.0","Carta de motivos (máximo 2 cuartillas)","Identificación oficial vigente"],
@@ -1557,7 +1561,7 @@ const notasData=[
   {fuente:"Milenio",fecha:"5 abril 2020",titulo:"Sindicatos del Poder Judicial CDMX negocian protocolos sanitarios",resumen:"Gestiones del SUTPJCM durante la pandemia para garantizar la seguridad.",url:"#"}
 ];
 
-const directorioData=[
+let directorioData=[
   {area:"Comité Ejecutivo",icon:"ti-crown",personas:[
     {nombre:"Víctor Rodrigo Garduño Lañas",cargo:"Secretario General",ext:"Ext. 101",correo:"secretaria.general@sutpjcm.org.mx"},
     {nombre:"José Gerardo Márquez Mollinedo",cargo:"Secretario del Interior",ext:"Ext. 102",correo:"interior@sutpjcm.org.mx"},
