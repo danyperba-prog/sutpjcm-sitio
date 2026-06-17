@@ -1330,9 +1330,9 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 // Pega aquí el ID de tu hoja de Google Sheets (está en la URL)
 // Ejemplo: https://docs.google.com/spreadsheets/d/AQUI_VA_EL_ID/edit
 const SHEET_ID = '2PACX-1vQ0XHG12g9cfyzOGfBCmrwg_MCnG5DH2L1zOYX7UhCxjMmjS8plJgXZPTjl9H2rLEE9aMRzxUTlgclw';
-const SHEET_BLOG = 'Blog';
-const SHEET_CONV = 'Convocatorias';
-const SHEET_DIR = 'Directorio';
+const SHEET_BLOG = '0';
+const SHEET_CONV = '1785562710';
+const SHEET_DIR = '16121908';
 // ============================================================
 
 // ============================================================
@@ -1357,8 +1357,8 @@ function parseCSV(text){
     return obj;
   });
 }
-function sheetUrl(tab){
-  return `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pub?output=csv&sheet=${encodeURIComponent(tab)}`;
+function sheetUrl(gid){
+  return `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pub?output=csv&gid=${gid}`;
 }
 
 async function cargarBlog(){
