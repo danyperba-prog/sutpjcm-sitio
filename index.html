@@ -55,7 +55,9 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 @media(max-width:1023px){.hamburger-btn{display:flex;align-items:center;justify-content:center}}
 /* MOBILE HEADER */
 @media(max-width:1023px){
-  .header-top{height:60px;padding:0 16px}
+  .header-top{height:60px;padding:0 16px;position:relative;justify-content:center}
+  .header-top .logo-btn{position:absolute;left:50%;transform:translateX(-50%)}
+  .header-top .hamburger-btn{position:absolute;left:16px}
   .site-header{position:sticky;top:0;z-index:200}
 }
 /* DRAWER MENU */
