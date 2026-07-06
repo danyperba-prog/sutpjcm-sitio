@@ -45,12 +45,42 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 .nav-link.nav-active{color:#00403b;border-bottom-color:#00403b;background:#f1f4f3}
 .header-cta{background:#00403b;color:#fff;border:none;cursor:pointer;font-family:'Public Sans',sans-serif;font-size:16px;font-weight:600;padding:10px 20px;border-radius:8px;transition:background .2s;white-space:nowrap;flex-shrink:0}
 .header-cta:hover{background:#195852}
-.mobile-nav{display:none;overflow-x:auto;border-top:1px solid rgba(191,200,198,.2);padding:0 12px;gap:0;scrollbar-width:none}
-.mobile-nav::-webkit-scrollbar{display:none}
-.mobile-nav-link{background:none;border:none;cursor:pointer;font-family:'Public Sans',sans-serif;font-size:12px;font-weight:500;color:#3f4947;padding:10px 12px;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s}
-.mobile-nav-link.nav-active{color:#00403b;border-bottom-color:#00403b}
-@media(max-width:1023px){.nav-links{display:none}.mobile-nav{display:flex}}
+.mobile-nav{display:none}
+.mobile-nav-link{display:none}
+@media(max-width:1023px){.nav-links{display:none}.header-cta{display:none}}
 @media(max-width:480px){.logo-text{display:none}}
+/* HAMBURGER BUTTON */
+.hamburger-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;color:#00403b}
+.hamburger-btn:hover{background:#f1f4f3}
+@media(max-width:1023px){.hamburger-btn{display:flex;align-items:center;justify-content:center}}
+/* MOBILE HEADER */
+@media(max-width:1023px){
+  .header-top{height:60px;padding:0 16px}
+  .site-header{position:sticky;top:0;z-index:200}
+}
+/* DRAWER MENU */
+.drawer-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:300}
+.drawer-overlay.open{display:block}
+.drawer{position:fixed;top:0;left:0;height:100%;width:280px;background:#fff;z-index:301;transform:translateX(-100%);transition:transform .3s ease;display:flex;flex-direction:column;box-shadow:4px 0 20px rgba(0,0,0,.15)}
+.drawer.open{transform:translateX(0)}
+.drawer-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #eee}
+.drawer-close{background:none;border:none;cursor:pointer;font-size:24px;color:#3f4947;line-height:1}
+.drawer-nav{display:flex;flex-direction:column;padding:12px 0;flex:1;overflow-y:auto}
+.drawer-link{background:none;border:none;cursor:pointer;font-family:'Public Sans',sans-serif;font-size:15px;font-weight:500;color:#3f4947;padding:14px 24px;text-align:left;border-left:3px solid transparent;transition:all .2s}
+.drawer-link:hover{color:#00403b;background:#f1f4f3;border-left-color:#00403b}
+.drawer-link.nav-active{color:#00403b;background:#f1f4f3;border-left-color:#00403b;font-weight:600}
+.drawer-cta{margin:16px 20px;background:#00403b;color:#fff;border:none;cursor:pointer;font-family:'Public Sans',sans-serif;font-size:15px;font-weight:600;padding:14px;border-radius:8px;transition:background .2s}
+.drawer-cta:hover{background:#195852}
+/* BOTTOM NAV */
+.bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid rgba(191,200,198,.3);z-index:200;box-shadow:0 -2px 10px rgba(0,0,0,.08)}
+.bottom-nav-inner{display:flex;justify-content:space-around;align-items:center;height:60px;max-width:480px;margin:0 auto}
+.bottom-nav-btn{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 12px;color:#3f4947;font-family:'Public Sans',sans-serif;font-size:10px;font-weight:500;border-top:2px solid transparent;transition:all .2s;min-width:60px}
+.bottom-nav-btn i{font-size:20px}
+.bottom-nav-btn.nav-active,.bottom-nav-btn:hover{color:#00403b}
+.bottom-nav-btn.nav-active{border-top-color:#00403b}
+@media(max-width:1023px){.bottom-nav{display:block}}
+/* Espacio para bottom nav en móvil */
+@media(max-width:1023px){body{padding-bottom:60px}}
 /* CAROUSEL */
 .carousel{width:100%;height:460px;position:relative;overflow:hidden;background:#000;display:none}
 .carousel.show{display:block}
@@ -699,6 +729,9 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 
 <header class="site-header">
   <div class="header-top">
+    <button class="hamburger-btn" onclick="openDrawer()" aria-label="Menú">
+      <i class="ti ti-menu-2" style="font-size:24px"></i>
+    </button>
     <button class="logo-btn" onclick="showPage('inicio',null)">
       <img src="img/logos/logo-principal.png" alt="SUTPJCDMX" style="height:90px;width:auto">
     </button>
@@ -713,17 +746,47 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
     </nav>
     <button class="header-cta" onclick="showPage('contacto',null)">Contacto</button>
   </div>
-  <div class="mobile-nav">
-    <button class="mobile-nav-link nav-active" data-nav="inicio" onclick="showPage('inicio',this)">Inicio</button>
-    <button class="mobile-nav-link" data-nav="quienes" onclick="showPage('quienes',this)">Quiénes somos</button>
-    <button class="mobile-nav-link" data-nav="tramites" onclick="showPage('tramites',this)">Trámites</button>
-    <button class="mobile-nav-link" data-nav="convocatorias" onclick="showPage('convocatorias',this)">Convocatorias</button>
-    <button class="mobile-nav-link" data-nav="blog" onclick="showPage('blog',this)">Blog</button>
-    <button class="mobile-nav-link" data-nav="juridico" onclick="showPage('juridico',this)">Marco jurídico</button>
-    <button class="mobile-nav-link" data-nav="directorio" onclick="showPage('directorio',this)">Directorio</button>
-    <button class="mobile-nav-link" data-nav="contacto" onclick="showPage('contacto',this)">Contacto</button>
-  </div>
 </header>
+
+<!-- DRAWER MENU -->
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <img src="img/logos/logo-principal.png" alt="SUTPJCM" style="height:48px;width:auto">
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+  <nav class="drawer-nav">
+    <button class="drawer-link nav-active" data-nav="inicio" onclick="showPage('inicio',null);closeDrawer()">Inicio</button>
+    <button class="drawer-link" data-nav="quienes" onclick="showPage('quienes',null);closeDrawer()">Quiénes somos</button>
+    <button class="drawer-link" data-nav="tramites" onclick="showPage('tramites',null);closeDrawer()">Trámites</button>
+    <button class="drawer-link" data-nav="convocatorias" onclick="showPage('convocatorias',null);closeDrawer()">Convocatorias</button>
+    <button class="drawer-link" data-nav="blog" onclick="showPage('blog',null);closeDrawer()">Blog</button>
+    <button class="drawer-link" data-nav="juridico" onclick="showPage('juridico',null);closeDrawer()">Marco jurídico</button>
+    <button class="drawer-link" data-nav="directorio" onclick="showPage('directorio',null);closeDrawer()">Directorio</button>
+  </nav>
+  <button class="drawer-cta" onclick="showPage('contacto',null);closeDrawer()">Contacto</button>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <div class="bottom-nav-inner">
+    <button class="bottom-nav-btn nav-active" data-nav="inicio" onclick="showPage('inicio',null)">
+      <i class="ti ti-home"></i><span>Inicio</span>
+    </button>
+    <button class="bottom-nav-btn" data-nav="convocatorias" onclick="showPage('convocatorias',null)">
+      <i class="ti ti-speakerphone"></i><span>Convocatorias</span>
+    </button>
+    <button class="bottom-nav-btn" data-nav="blog" onclick="showPage('blog',null)">
+      <i class="ti ti-news"></i><span>Noticias</span>
+    </button>
+    <button class="bottom-nav-btn" data-nav="directorio" onclick="showPage('directorio',null)">
+      <i class="ti ti-address-book"></i><span>Directorio</span>
+    </button>
+    <button class="bottom-nav-btn" data-nav="contacto" onclick="showPage('contacto',null)">
+      <i class="ti ti-phone"></i><span>Contacto</span>
+    </button>
+  </div>
+</nav>
 
 <!-- CARRUSEL -->
 <div class="carousel show" id="carousel">
@@ -2015,11 +2078,14 @@ ctrack.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;},{passive:
 ctrack.addEventListener('touchend',e=>{const d=touchX-e.changedTouches[0].clientX;if(Math.abs(d)>50)d>0?nextSlide():prevSlide();});
 startTimer();
 
+// DRAWER
+function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('drawer-overlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('drawer-overlay').classList.remove('open');document.body.style.overflow='';}
 // NAV — mapeo de página a data-nav
 const navMap={inicio:'inicio',quienes:'quienes',historia:'quienes',tramites:'tramites',convocatorias:'convocatorias','conv-detail':'convocatorias',blog:'blog',post:'blog',juridico:'juridico',directorio:'directorio',contacto:'contacto'};
 function showPage(id,btn){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nav-link,.mobile-nav-link').forEach(b=>b.classList.remove('nav-active'));
+  document.querySelectorAll('.nav-link,.drawer-link,.bottom-nav-btn').forEach(b=>b.classList.remove('nav-active'));
   document.getElementById('page-'+id).classList.add('active');
   document.getElementById('carousel').classList.toggle('show',id==='inicio');
   const target=navMap[id];
