@@ -621,6 +621,13 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 .footer-contact-item i{font-size:14px;color:#72d8c6;flex-shrink:0;margin-top:2px}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.1);max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12px}
 @media(max-width:900px){.footer-main{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){
+  .footer-main{grid-template-columns:1fr;gap:24px;padding:32px 20px;text-align:center}
+  .footer-logo{justify-content:center}
+  .footer-col ul{align-items:center}
+  .footer-contact-item{justify-content:center}
+  .footer-bottom{flex-direction:column;text-align:center;gap:8px}
+}
 /* QUIENES SOMOS — fuentes unificadas */
 #page-quienes .page-content p{font-size:16px!important;line-height:1.8!important}
 #page-quienes .page-content li{font-size:16px!important;line-height:1.8!important}
