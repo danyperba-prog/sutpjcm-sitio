@@ -30,7 +30,7 @@ tailwind.config={theme:{extend:{colors:{"primary":"#00403b","primary-container":
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--g:#00403b;--gd:#195852;--gp:#f1f4f3;--gold:#72d8c6;--t:#181c1c;--tm:#3f4947;--b:#bfc8c6;--bg:#f7faf9;--w:#fff}
-body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1.8;color:var(--t);background:var(--bg)}
+body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1.8;color:var(--t);background:var(--bg);overflow-x:hidden}
 /* HEADER */
 .site-header{background:#fff;border-bottom:1px solid rgba(191,200,198,.3);position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.06)}
 .header-top{max-width:1200px;margin:0 auto;padding:0 24px;height:100px;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -187,7 +187,7 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 .eq-card p{font-size:12px;color:var(--g);font-weight:500}
 /* ORGANIGRAMA */
 .org-wrap{background:#fff;border:1px solid rgba(191,200,198,.4);border-radius:14px;padding:22px;overflow-x:auto;margin-bottom:8px}
-.org-tree{display:flex;flex-direction:column;align-items:center;min-width:500px}
+.org-tree{display:flex;flex-direction:column;align-items:center;min-width:500px;max-width:100%}
 .org-root{background:var(--g);color:#fff;border-radius:10px;padding:12px 24px;text-align:center;font-size:13px;font-weight:600;min-width:200px}
 .org-root span{display:block;font-size:11px;opacity:.8;margin-top:2px}
 .ocd{width:2px;height:24px;background:var(--g);margin:0 auto}
