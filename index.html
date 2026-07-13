@@ -190,6 +190,12 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 .org-tree{display:flex;flex-direction:column;align-items:center;min-width:0;width:100%}
 .org-tree-wrap{overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch}
 .org-root{background:var(--g);color:#fff;border-radius:10px;padding:12px 24px;text-align:center;font-size:13px;font-weight:600;min-width:200px}
+.comisiones-outer{display:grid;grid-template-columns:1fr 2fr;gap:16px}
+.comisiones-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:600px){
+  .comisiones-outer{grid-template-columns:1fr}
+  .comisiones-inner{grid-template-columns:1fr 1fr}
+}
 .org-root span{display:block;font-size:11px;opacity:.8;margin-top:2px}
 .ocd{width:2px;height:24px;background:var(--g);margin:0 auto}
 .ohl{height:2px;background:var(--g);width:80%;margin:0 auto}
@@ -1085,7 +1091,7 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
   <!-- NIVEL 3: COMISIONES PERMANENTES -->
   <div style="background:#195852;border-radius:14px;padding:20px;margin-bottom:16px">
     <div style="font-size:11px;font-weight:700;color:#72d8c6;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;text-align:center">Comisiones Permanentes (Vigilancia y Apoyo)</div>
-    <div style="display:grid;grid-template-columns:1fr 2fr;gap:16px">
+    <div class="comisiones-outer">
 
       <!-- Autónomas -->
       <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:16px">
@@ -1100,7 +1106,7 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
       <!-- Auxiliares -->
       <div style="background:rgba(255,255,255,.08);border-radius:12px;padding:16px">
         <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px">Comisiones Auxiliares y Especializadas</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+        <div class="comisiones-inner">
           <div style="background:rgba(255,255,255,.12);border-radius:8px;padding:8px 12px;font-size:12px;color:#fff;text-align:center">Comisión de Trabajo</div>
           <div style="background:rgba(255,255,255,.12);border-radius:8px;padding:8px 12px;font-size:12px;color:#fff;text-align:center">Comisión Deportiva</div>
           <div style="background:rgba(255,255,255,.12);border-radius:8px;padding:8px 12px;font-size:12px;color:#fff;text-align:center">Comisión Jurídica</div>
