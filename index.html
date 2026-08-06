@@ -2191,6 +2191,13 @@ function toggleDirAcc(i){
   const body=document.querySelector(`#dir-acc-${i} .dir-acc-body`);
   const arrow=document.querySelector(`#dir-acc-${i} .dir-acc-arrow`);
   const isOpen=body.style.display!=='none';
+  // cerrar todos los demás
+  document.querySelectorAll('.dir-acc-body').forEach((b,j)=>{
+    if(j!==i){b.style.display='none';}
+  });
+  document.querySelectorAll('.dir-acc-arrow').forEach((a,j)=>{
+    if(j!==i){a.style.transform='';}
+  });
   body.style.display=isOpen?'none':'block';
   arrow.style.transform=isOpen?'':'rotate(180deg)';
 }
