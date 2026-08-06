@@ -575,6 +575,11 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 .dir-atencion-btn:hover{opacity:.9}
 @media(max-width:900px){.dir-layout{grid-template-columns:1fr}.dir-sidebar{position:static}}
 @media(max-width:600px){.dir-grid{grid-template-columns:1fr}}
+/* DIRECTORIO BUSCADOR */
+.dir-search-wrap{position:relative;margin-bottom:24px}
+.dir-search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#3f4947;font-size:18px}
+.dir-search-input{width:100%;padding:12px 16px 12px 42px;border:1px solid rgba(191,200,198,.5);border-radius:10px;font-family:'Public Sans',sans-serif;font-size:15px;color:var(--t);background:#fff;outline:none;transition:border .2s}
+.dir-search-input:focus{border-color:#00403b}
 /* CONTACTO */
 .cont-layout{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
 .cont-info-col{display:flex;flex-direction:column;gap:16px}
@@ -1300,6 +1305,10 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 <div class="page" id="page-directorio">
   <div class="page-hero"><img src="img/oficina.png" alt="" class="page-hero-img"><div class="page-hero-dim"></div><div class="page-hero-inner"><h1>Directorio</h1><p>Integrantes del comité ejecutivo y responsables de área</p></div></div>
   <div class="page-content">
+    <div class="dir-search-wrap">
+      <i class="ti ti-search dir-search-icon"></i>
+      <input type="text" class="dir-search-input" id="dir-search" placeholder="Buscar por nombre o cargo..." oninput="filtrarDirectorio(this.value)">
+    </div>
     <div id="directorio-list"></div>
   </div>
 </div>
@@ -2112,6 +2121,33 @@ function renderDirectorio(){
     </div>`;
 
   document.getElementById('directorio-list').innerHTML=`<div class="dir-layout">${sidebar}${main}</div>`;
+}
+function filtrarDirectorio(q){
+  const term=q.toLowerCase().trim();
+  if(!term){renderDirectorio();return;}
+  const filtered=directorioData.map(s=>({
+    ...s,
+    personas:s.personas.filter(p=>p.nombre.toLowerCase().includes(term)||p.cargo.toLowerCase().includes(term))
+  })).filter(s=>s.personas.length);
+  const main=`<div class="dir-main">${filtered.map(sec=>`
+    <div class="dir-sec">
+      <div class="dir-sec-title"><i class="ti ${sec.icon}" style="font-size:18px;color:var(--g)"></i> ${sec.area}</div>
+      <div class="dir-grid">${sec.personas.map(p=>`
+        <div class="dir-card">
+          <div class="dir-av">${initials(p.nombre)}</div>
+          <div class="dir-info">
+            <h4>${p.nombre}</h4><p>${p.cargo}</p>
+            <div class="dir-info-meta">
+              <span><i class="ti ti-phone" style="font-size:13px"></i> ${p.ext}</span>
+              <a href="mailto:${p.correo}"><i class="ti ti-mail" style="font-size:13px"></i> ${p.correo}</a>
+            </div>
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>`).join('')}
+    ${filtered.length===0?'<p style="color:#3f4947;text-align:center;padding:24px">No se encontraron resultados.</p>':''}
+  </div>`;
+  document.getElementById('directorio-list').innerHTML=`<div class="dir-layout">${main}</div>`;
 }
 function setDirFiltro(f){
   dirFiltro=f;
