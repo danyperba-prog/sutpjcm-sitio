@@ -575,6 +575,13 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 .dir-atencion-btn:hover{opacity:.9}
 @media(max-width:900px){.dir-layout{grid-template-columns:1fr}.dir-sidebar{position:static}}
 @media(max-width:600px){.dir-grid{grid-template-columns:1fr}}
+/* DIRECTORIO ACORDEÓN MÓVIL */
+.dir-accordion{display:flex;flex-direction:column;gap:8px}
+.dir-acc-item{border:1px solid rgba(191,200,198,.4);border-radius:12px;overflow:hidden;background:#fff}
+.dir-acc-header{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 18px;background:none;border:none;cursor:pointer;font-family:'Public Sans',sans-serif;font-size:15px;font-weight:600;color:var(--t);text-align:left}
+.dir-acc-header:hover{background:var(--gp)}
+.dir-acc-arrow{font-size:18px;color:var(--g);transition:transform .25s;flex-shrink:0}
+.dir-acc-body{padding:0 12px 12px}
 /* DIRECTORIO BUSCADOR */
 .dir-search-wrap{position:relative;margin-bottom:24px}
 .dir-search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#3f4947;font-size:18px}
@@ -2072,6 +2079,38 @@ function toggleJuridico(i){
 function renderEquipo(){const sec=directorioData.find(s=>s.area==='Comité Ejecutivo')||directorioData[0];if(!sec||!sec.personas)return;document.getElementById('equipo-grid').innerHTML=sec.personas.map(p=>`<div class="eq-card"><div class="eq-av">${initials(p.nombre)}</div><h4>${p.nombre}</h4><p>${p.cargo}</p></div>`).join('');}
 let dirFiltro='todos';
 function renderDirectorio(){
+  const isMobile=window.innerWidth<=1023;
+  if(isMobile){
+    // MODO ACORDEÓN MÓVIL
+    document.getElementById('directorio-list').innerHTML=`
+      <div class="dir-accordion">
+        ${directorioData.map((sec,i)=>`
+        <div class="dir-acc-item" id="dir-acc-${i}">
+          <button class="dir-acc-header" onclick="toggleDirAcc(${i})">
+            <span><i class="ti ${sec.icon}" style="font-size:16px;color:var(--g);margin-right:8px"></i>${sec.area}</span>
+            <i class="ti ti-chevron-down dir-acc-arrow"></i>
+          </button>
+          <div class="dir-acc-body" style="display:none">
+            <div class="dir-grid">
+              ${sec.personas.map(p=>`
+              <div class="dir-card">
+                <div class="dir-av">${initials(p.nombre)}</div>
+                <div class="dir-info">
+                  <h4>${p.nombre}</h4>
+                  <p>${p.cargo}</p>
+                  <div class="dir-info-meta">
+                    <span><i class="ti ti-phone" style="font-size:13px"></i> ${p.ext}</span>
+                    <a href="mailto:${p.correo}"><i class="ti ti-mail" style="font-size:13px"></i> ${p.correo}</a>
+                  </div>
+                </div>
+              </div>`).join('')}
+            </div>
+          </div>
+        </div>`).join('')}
+      </div>`;
+    return;
+  }
+  // MODO DESKTOP
   const filtered=dirFiltro==='todos'?directorioData:directorioData.filter(s=>s.area===dirFiltro);
   const sidebar=`
     <div class="dir-sidebar">
@@ -2088,7 +2127,6 @@ function renderDirectorio(){
         <strong><i class="ti ti-phone" style="font-size:15px;vertical-align:middle"></i> 55 1234 5678</strong>
       </div>
     </div>`;
-
   const main=`
     <div class="dir-main">
       ${filtered.map(sec=>`
@@ -2148,6 +2186,13 @@ function filtrarDirectorio(q){
     ${filtered.length===0?'<p style="color:#3f4947;text-align:center;padding:24px">No se encontraron resultados.</p>':''}
   </div>`;
   document.getElementById('directorio-list').innerHTML=`<div class="dir-layout">${main}</div>`;
+}
+function toggleDirAcc(i){
+  const body=document.querySelector(`#dir-acc-${i} .dir-acc-body`);
+  const arrow=document.querySelector(`#dir-acc-${i} .dir-acc-arrow`);
+  const isOpen=body.style.display!=='none';
+  body.style.display=isOpen?'none':'block';
+  arrow.style.transform=isOpen?'':'rotate(180deg)';
 }
 function setDirFiltro(f){
   dirFiltro='todos';
