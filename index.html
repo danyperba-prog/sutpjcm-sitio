@@ -2150,9 +2150,21 @@ function filtrarDirectorio(q){
   document.getElementById('directorio-list').innerHTML=`<div class="dir-layout">${main}</div>`;
 }
 function setDirFiltro(f){
-  dirFiltro=f;
+  dirFiltro='todos';
   renderDirectorio();
-  document.getElementById('page-directorio').scrollIntoView({behavior:'smooth',block:'start'});
+  if(f==='todos'){
+    document.getElementById('page-directorio').scrollIntoView({behavior:'smooth',block:'start'});
+    return;
+  }
+  setTimeout(()=>{
+    const secs=document.querySelectorAll('.dir-sec-title');
+    for(const s of secs){
+      if(s.textContent.trim().includes(f)){
+        s.scrollIntoView({behavior:'smooth',block:'start'});
+        break;
+      }
+    }
+  },100);
 }
 function renderTimeline(){document.getElementById('timeline-list').innerHTML=timelineData.map(t=>`<div class="tli${t.hl?' hl':''}"><div class="tldot"></div><div class="tlyear">${t.year}</div><div class="tlcard"><h4>${t.title}</h4><p>${t.desc}</p></div></div>`).join('');}
 function renderNotas(){document.getElementById('notas-list').innerHTML=notasData.map(n=>`<div class="nota-card"><span class="nota-badge"><i class="ti ti-news" style="font-size:10px"></i> ${n.fuente}</span><div class="nota-body"><h4>${n.titulo}</h4><p>${n.resumen}</p><div class="nota-meta"><span><i class="ti ti-calendar" style="font-size:11px"></i> ${n.fecha}</span><a href="${n.url}"><i class="ti ti-external-link" style="font-size:11px"></i> Ver nota</a></div></div></div>`).join('');}
