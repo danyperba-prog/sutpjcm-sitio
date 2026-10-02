@@ -931,8 +931,8 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
     <p style="font-size:16px;color:var(--t);line-height:1.8">Conforme al <strong>Artículo 4° de nuestros Estatutos</strong>, el SMPJ tiene como fin principal el estudio, mejoramiento y defensa de los intereses comunes de sus socios, la superación económica, política, cultural y social de sus miembros, el fomento de la fraternidad con otros sindicatos de trabajadores al servicio del Estado, la cooperación con la FSTSE y, como principio fundamental, el establecimiento de la <strong>Carrera Judicial</strong> en beneficio de los trabajadores y de la Administración de Justicia.</p>
   </div>
 
-  <!-- DECLARACIÓN DE PRINCIPIOS -->
-  <div class="sub-title"><i class="ti ti-certificate" style="color:var(--g);font-size:16px"></i> Declaración de Principios</div>
+  <!-- DECLARACIÓN DE PRINCIPIOS (oculto temporalmente) -->
+  <div style="display:none"><div class="sub-title"><i class="ti ti-certificate" style="color:var(--g);font-size:16px"></i> Declaración de Principios</div>
   <div style="background:#f1f4f3;border-radius:14px;padding:22px 26px;margin-bottom:20px;border-left:4px solid var(--g)">
     <p style="font-size:15px;color:var(--gd);margin-bottom:18px;font-weight:500">La organización actúa con estricta moralidad y rectitud dentro de la Administración de Justicia bajo los siguientes ejes fundamentales:</p>
     <div class="principios-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
@@ -961,14 +961,15 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
         <p style="font-size:15px;color:var(--t);line-height:1.7">Los miembros deben procurar las necesidades e intereses colectivos, incluso sobre los individuales, para el bienestar común.</p>
       </div>
     </div>
-  </div>
+  </div></div><!-- /declaracion oculta -->
   <div class="hist-card" onclick="showPage('historia',null)" style="margin-top:28px">
     <div><h3><i class="ti ti-history" style="font-size:16px;margin-right:6px"></i>Nuestra historia</h3><p>Conoce el origen, hitos y notas periodísticas que acreditan la fundación del SMPJ</p></div>
     <div style="display:flex;align-items:center;gap:12px;flex-shrink:0"><span class="hist-badge">Desde 1997</span><i class="ti ti-arrow-right" style="color:rgba(255,255,255,.6);font-size:20px"></i></div>
   </div>
   <div class="sub-title" style="margin-top:28px"><i class="ti ti-crown" style="color:var(--g);font-size:16px"></i> Comité ejecutivo</div>
   <div class="eq-grid" id="equipo-grid"></div>
-  <div class="sub-title"><i class="ti ti-sitemap" style="color:var(--g);font-size:16px"></i> Organigrama de áreas</div>
+  <!-- ORGANIGRAMA Y COMISIONES (oculto temporalmente) -->
+  <div style="display:none"><div class="sub-title"><i class="ti ti-sitemap" style="color:var(--g);font-size:16px"></i> Organigrama de áreas</div>
   <div style="overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch">
   <!-- NIVEL 2: COMITÉ CENTRAL EJECUTIVO -->
   <div style="background:#f1f4f3;border-radius:14px;padding:20px;margin-bottom:16px">
@@ -1154,6 +1155,7 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
     </div>
   </div>
   </div><!-- /organigrama wrap -->
+  </div><!-- /organigrama oculto -->
   </div><!-- /page-content -->
 </div>
 
