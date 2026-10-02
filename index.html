@@ -1683,11 +1683,11 @@ const juridicoData=[
    desc:"Regula las relaciones entre el Estado y sus trabajadores, incluyendo al Poder Judicial. Define el sindicato burocrático y los mecanismos de defensa colectiva del sector público.",
    arts:[{num:"Artículo 68 LFTSE",tit:"Derecho de sindicalización del sector público",txt:"Los trabajadores podrán constituir el sindicato de su dependencia, a condición de que el número de sus agremiados no sea menor de veinte.",gold:true},{num:"Artículo 69 LFTSE",tit:"Tipos de sindicatos del Estado",txt:"El sindicato se clasifica en: de empresa o institución, y gremiales."},{num:"Artículo 71 LFTSE",tit:"Requisitos para el registro",txt:"Los sindicatos se registrarán ante el Tribunal Federal de Conciliación y Arbitraje."},{num:"Artículo 78 LFTSE",tit:"Condiciones generales de trabajo",txt:"Las condiciones generales de trabajo se fijarán por el Titular de la Dependencia, tomando en cuenta la opinión del sindicato."}],
    archivo:"docs/ley-trabajadores-servicio-estado.pdf"},
-  {titulo:"Estatuto Sindical del SMPJ",sub:"Norma interna que rige la vida democrática del sindicato",tipo:"int",icono:"ti-file-certificate",
+  {oculto:true,titulo:"Estatuto Sindical del SMPJ",sub:"Norma interna que rige la vida democrática del sindicato",tipo:"int",icono:"ti-file-certificate",
    desc:"Documento fundacional que rige la organización, funcionamiento y vida democrática interna del SMPJ. Establece derechos, obligaciones, estructura directiva y procesos electorales.",
    arts:[{num:"Capítulo I — Constitución",tit:"Denominación y domicilio",txt:"El Sindicato Mexicano del Poder Judicial, constituido el 15 de marzo de 1997, tiene su domicilio en la Ciudad de México.",gold:true},{num:"Capítulo II — Derechos",tit:"Derechos de los agremiados",txt:"Son derechos de los agremiados: votar y ser votado; participar en asambleas con voz y voto; recibir beneficios y prestaciones; ser representado ante cualquier conflicto laboral."},{num:"Capítulo IV — Comité Ejecutivo",tit:"Integración del Comité Ejecutivo",txt:"El Comité Ejecutivo se integra por 38 secretarías encabezadas por el Secretario General, abarcando áreas de organización, trabajo, bienestar social, capacitación, grupos específicos, fomento, relaciones y seguridad.",gold:true},{num:"Capítulo VI — Elecciones",tit:"Proceso electoral interno",txt:"Las elecciones se realizarán cada cuatro años mediante voto universal, libre, directo y secreto. La convocatoria deberá publicarse con al menos 60 días de anticipación."},{num:"Capítulo VII — Finanzas",tit:"Cuotas sindicales",txt:"Los agremiados cubrirán una cuota sindical ordinaria equivalente al 1% de su salario mensual neto, descontada directamente vía nómina."}],
    archivo:"docs/estatuto-sindical-sutpjcm.pdf"},
-  {titulo:"Contrato Colectivo de Trabajo vigente",sub:"Condiciones laborales pactadas 2025",tipo:"int",icono:"ti-handshake",
+  {oculto:true,titulo:"Contrato Colectivo de Trabajo vigente",sub:"Condiciones laborales pactadas 2025",tipo:"int",icono:"ti-handshake",
    desc:"Instrumento jurídico que establece las condiciones de trabajo pactadas entre el SMPJ y el Tribunal Superior de Justicia de la CDMX.",
    arts:[{num:"Cláusula 1 — Reconocimiento",tit:"Reconocimiento del sindicato",txt:"El Tribunal Superior de Justicia de la CDMX reconoce al SMPJ como el único sindicato representativo de los trabajadores de base.",gold:true},{num:"Cláusula 5 — Jornada",tit:"Jornada de trabajo",txt:"La jornada ordinaria es de 8 horas diarias, 40 horas semanales, de lunes a viernes. El tiempo extraordinario se remunera con el doble del salario ordinario."},{num:"Cláusula 8 — Vacaciones",tit:"Período vacacional",txt:"Los trabajadores de base tendrán derecho a 20 días hábiles anuales de vacaciones, con prima vacacional del 25%."},{num:"Cláusula 12 — Prestaciones",tit:"Prestaciones adicionales",txt:"Fondo de ahorro, seguro de vida, apoyo para lentes, servicio médico complementario y becas educativas para hijos."}],
    archivo:"docs/contrato-colectivo-trabajo-2025.pdf"}
@@ -2006,7 +2006,7 @@ function showConvDetailPage(i){
 const tipoBadge={fed:'b-fed',loc:'b-loc',int:'b-int'};
 const tipoLabel={fed:'Ley Federal',loc:'Ley Local',int:'Documento interno'};
 function renderJuridico(){
-  const grid=juridicoData.map((l,i)=>`
+  const grid=juridicoData.filter(l=>!l.oculto).map((l,i)=>`
     <div class="jur-card" id="lj-${i}">
       <div class="jur-card-top" onclick="toggleJuridico(${i})">
         <div class="jur-card-header">
