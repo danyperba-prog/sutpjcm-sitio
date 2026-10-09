@@ -1579,6 +1579,18 @@ async function cargarDirectorio(){
       mapa[area].personas.push({nombre:r['Nombre'],cargo:r['Cargo']||'',ext:r['Extensión']||'',correo:r['Correo']||''});
     });
     directorioData=Object.values(mapa);
+    // Sobreescribir nombres conocidos del Comité Ejecutivo
+    const nombresComite={
+      'Presidente':'José Nezahualcóyotl Salinas Martínez',
+      'Secretario General':'Rodrigo Garduño Lañas',
+      'Secretario del Interior':'Gerardo Márquez Mollinedo',
+      'Secretario del Exterior':'Imanol Tellez García'
+    };
+    const comite=directorioData.find(s=>s.area==='Comité Ejecutivo');
+    if(comite) comite.personas.forEach(p=>{
+      const nombre=nombresComite[p.cargo];
+      if(nombre) p.nombre=nombre;
+    });
     return true;
   }catch(e){return false;}
 }
