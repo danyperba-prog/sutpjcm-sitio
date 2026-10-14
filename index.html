@@ -34,7 +34,7 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 /* HEADER */
 .site-header{background:#fff;border-bottom:1px solid rgba(191,200,198,.3);position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.06)}
 .header-top{max-width:1200px;margin:0 auto;padding:0 24px;height:100px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo-btn{background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:4px;border-radius:8px;font-family:'Public Sans',sans-serif}
+.logo-btn{background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:4px;border-radius:8px;font-family:'Public Sans',sans-serif;flex-shrink:0}
 .logo-circle{width:40px;height:40px;border-radius:50%;background:#00403b;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .logo-circle .material-symbols-outlined{color:#fff;font-size:22px}
 .logo-text strong{display:block;font-size:14px;font-weight:700;color:#00403b;line-height:1.2}
@@ -795,7 +795,7 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
       <i class="ti ti-menu-2" style="font-size:24px"></i>
     </button>
     <button class="logo-btn" onclick="showPage('inicio',null)">
-      <img src="img/logos/logos sindicato 2.png" alt="SMPJ" style="height:90px;width:auto">
+      <img src="img/logos/logos sindicato 2.png" alt="SMPJ" style="height:90px;width:auto;flex-shrink:0">
     </button>
     <nav class="nav-links" id="nav-links">
       <button class="nav-link nav-active" data-nav="inicio" onclick="showPage('inicio',this)">Inicio</button>
