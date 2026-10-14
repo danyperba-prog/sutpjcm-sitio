@@ -979,7 +979,7 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
     <div><h3><i class="ti ti-history" style="font-size:16px;margin-right:6px"></i>Nuestra historia</h3><p>Conoce el origen, hitos y notas periodísticas que acreditan la fundación del SMPJ</p></div>
     <div style="display:flex;align-items:center;gap:12px;flex-shrink:0"><span class="hist-badge">Desde 1997</span><i class="ti ti-arrow-right" style="color:rgba(255,255,255,.6);font-size:20px"></i></div>
   </div>
-  <div class="sub-title" style="margin-top:28px"><i class="ti ti-crown" style="color:var(--g);font-size:16px"></i> Comité ejecutivo</div>
+  <div class="sub-title" style="margin-top:28px"><i class="ti ti-crown" style="color:var(--g);font-size:16px"></i> Comité Ejecutivo Nacional</div>
   <div class="eq-grid" id="equipo-grid"></div>
   <!-- ORGANIGRAMA Y COMISIONES (oculto temporalmente) -->
   <div style="display:none"><div class="sub-title"><i class="ti ti-sitemap" style="color:var(--g);font-size:16px"></i> Organigrama de áreas</div>
@@ -1325,7 +1325,7 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 
 <!-- DIRECTORIO -->
 <div class="page" id="page-directorio">
-  <div class="page-hero"><img src="img/oficina.png" alt="" class="page-hero-img"><div class="page-hero-dim"></div><div class="page-hero-inner"><h1>Directorio</h1><p>Integrantes del comité ejecutivo y responsables de área</p></div></div>
+  <div class="page-hero"><img src="img/oficina.png" alt="" class="page-hero-img"><div class="page-hero-dim"></div><div class="page-hero-inner"><h1>Directorio</h1><p>Integrantes del Comité Ejecutivo Nacional y responsables de área</p></div></div>
   <div class="page-content">
     <div class="dir-search-wrap">
       <i class="ti ti-search dir-search-icon"></i>
@@ -1599,7 +1599,7 @@ async function cargarDirectorio(){
       'Secretario del Interior':'Gerardo Márquez Mollinedo',
       'Secretario del Exterior':'Imanol Tellez García'
     };
-    const comite=directorioData.find(s=>s.area==='Comité Ejecutivo');
+    const comite=directorioData.find(s=>s.area==='Comité Ejecutivo Nacional');
     if(comite) comite.personas.forEach(p=>{
       const nombre=nombresComite[p.cargo];
       if(nombre) p.nombre=nombre;
@@ -1737,7 +1737,7 @@ const notasData=[
 ];
 
 let directorioData=[
-  {area:"Comité Ejecutivo",icon:"ti-crown",personas:[
+  {area:"Comité Ejecutivo Nacional",icon:"ti-crown",personas:[
     {nombre:"José Nezahualcóyotl Salinas Martínez",cargo:"Presidente",ext:"Ext. 100",correo:"presidencia@sutpjcm.org.mx"},
     {nombre:"Rodrigo Garduño Lañas",cargo:"Secretario General",ext:"Ext. 101",correo:"secretaria.general@sutpjcm.org.mx"},
     {nombre:"Gerardo Márquez Mollinedo",cargo:"Secretario del Interior",ext:"Ext. 102",correo:"interior@sutpjcm.org.mx"},
@@ -2105,7 +2105,7 @@ function toggleJuridico(i){
   if(!isOpen){card.classList.add('open');body.style.display='block';}
 }
 
-function renderEquipo(){const sec=directorioData.find(s=>s.area==='Comité Ejecutivo')||directorioData[0];if(!sec||!sec.personas)return;document.getElementById('equipo-grid').innerHTML=sec.personas.map(p=>`<div class="eq-card"><div class="eq-av">${initials(p.nombre)}</div><h4>${p.nombre}</h4><p>${p.cargo}</p></div>`).join('');}
+function renderEquipo(){const sec=directorioData.find(s=>s.area==='Comité Ejecutivo Nacional')||directorioData[0];if(!sec||!sec.personas)return;document.getElementById('equipo-grid').innerHTML=sec.personas.map(p=>`<div class="eq-card"><div class="eq-av">${initials(p.nombre)}</div><h4>${p.nombre}</h4><p>${p.cargo}</p></div>`).join('');}
 let dirFiltro='todos';
 function renderDirectorio(){
   const isMobile=window.innerWidth<=1023;
