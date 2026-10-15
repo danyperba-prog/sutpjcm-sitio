@@ -1935,45 +1935,11 @@ const convImgs=['img/tramites.png','img/cd-judicial.jpeg','img/marco-juridico.jp
 const estCfg={vigente:{label:'Vigente',cls:'vigente'},proxima:{label:'Próxima',cls:'proxima'},cerrada:{label:'Cerrada',cls:'cerrada'}};
 let convFiltro='todos';
 function renderConvocatorias(){
-  const f=convFiltro==='todos'?convocatoriasData:convocatoriasData.filter(c=>c.estatus===convFiltro);
   document.getElementById('convocatorias-list').innerHTML=`
-    <div class="conv-filters">
-      <button class="conv-filter${convFiltro==='todos'?' active':''}" onclick="setConvFiltro('todos')">Todas</button>
-      <button class="conv-filter${convFiltro==='vigente'?' active':''}" onclick="setConvFiltro('vigente')">Vigentes</button>
-      <button class="conv-filter${convFiltro==='proxima'?' active':''}" onclick="setConvFiltro('proxima')">Próximas</button>
-      <button class="conv-filter${convFiltro==='cerrada'?' active':''}" onclick="setConvFiltro('cerrada')">Históricas</button>
-    </div>
-    <div class="conv-grid">
-      ${f.map((c,i)=>{
-        const idx=convocatoriasData.indexOf(c);
-        const cfg=estCfg[c.estatus]||estCfg.vigente;
-        return `
-        <div class="conv-card">
-          <div class="conv-card-img">
-            <img src="${convImgs[idx%convImgs.length]}" alt="${c.titulo}" loading="lazy">
-            <span class="conv-status ${cfg.cls}">${cfg.label}</span>
-          </div>
-          <div class="conv-card-body">
-            <div class="conv-card-date"><i class="ti ti-clock" style="font-size:14px;color:var(--g)"></i> Cierre: ${c.cierre}</div>
-            <div class="conv-card-title">${c.titulo}</div>
-            <div class="conv-card-desc">${c.desc.substring(0,100)}...</div>
-          </div>
-          <div class="conv-card-footer">
-            <button class="conv-btn-detail" onclick="openConvDetail(${idx})"><i class="ti ti-list-details" style="font-size:15px"></i> Ver detalles</button>
-            ${c.linkAplicar?`<a href="${c.linkAplicar}" class="conv-btn-apply"><i class="ti ti-send" style="font-size:15px"></i> Aplicar</a>`:''}
-          </div>
-        </div>`;
-      }).join('')}
-    </div>
-    <div class="conv-cta">
-      <div>
-        <h3>¿Tienes dudas sobre una convocatoria?</h3>
-        <p>Nuestro equipo está disponible para orientarte en los procesos de inscripción y requisitos.</p>
-      </div>
-      <div class="conv-cta-btns">
-        <a href="mailto:contacto@sutpjcm.org.mx" class="conv-cta-btn solid"><i class="ti ti-mail" style="font-size:18px"></i> Enviar mensaje</a>
-        <a href="tel:5512345678" class="conv-cta-btn outline"><i class="ti ti-phone" style="font-size:18px"></i> Llamar ahora</a>
-      </div>
+    <div style="text-align:center;padding:60px 24px 40px;max-width:480px;margin:0 auto">
+      <i class="ti ti-speakerphone" style="font-size:48px;color:var(--g);opacity:.4;margin-bottom:16px;display:block"></i>
+      <h3 style="font-size:20px;font-weight:700;color:var(--t);margin-bottom:10px">Sin convocatorias activas</h3>
+      <p style="font-size:15px;color:var(--ts);line-height:1.6">Por el momento no hay convocatorias vigentes ni próximas. Te informaremos oportunamente cuando se publiquen nuevas convocatorias.</p>
     </div>`;
 }
 function setConvFiltro(f){convFiltro=f;renderConvocatorias();}
