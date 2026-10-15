@@ -1198,11 +1198,7 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
   <div class="page-hero"><img src="img/tramites.png" alt="" class="page-hero-img"><div class="page-hero-dim"></div><div class="page-hero-inner"><h1>Trámites sindicales</h1><p>Haz clic en cada trámite para ver descripción, requisitos, beneficios y preguntas frecuentes</p></div></div>
   <div class="page-content">
     <div id="tramites-list"></div>
-    <div class="tr-bottom-grid">
-      <div class="tr-bottom-card tr-bottom-faq" onclick="document.querySelector('.tramites-faq')?.scrollIntoView({behavior:'smooth'})">
-        <i class="ti ti-help-circle" style="font-size:28px;color:#3f4947"></i>
-        <span>Preguntas Frecuentes</span>
-      </div>
+    <div class="tr-bottom-grid" style="grid-template-columns:1fr">
       <div class="tr-bottom-card tr-bottom-contacto" onclick="showPage('contacto',null)">
         <i class="ti ti-map-pin" style="font-size:28px;color:#fff"></i>
         <span>Contacto</span>
@@ -1938,20 +1934,7 @@ function renderTramites(){
       </div>
     </div>`).join('')}
   </div>
-  <div class="tramites-faq">
-    <h2>Preguntas Frecuentes</h2>
-    <div style="display:grid;gap:10px">
-      ${tramitesData.flatMap(t=>t.faq.slice(0,1)).slice(0,5).map(f=>`
-      <div class="exp-card" style="margin-bottom:0">
-        <div class="exp-header" onclick="this.closest('.exp-card').classList.toggle('open')" style="padding:16px 20px">
-          <div class="exp-icon" style="background:var(--gp)"><i class="ti ti-help" style="font-size:18px;color:var(--g)"></i></div>
-          <div class="exp-hi"><h4>${f.q}</h4></div>
-          <i class="ti ti-chevron-down exp-chev"></i>
-        </div>
-        <div class="exp-body"><div style="padding:16px 20px"><p>${f.a}</p></div></div>
-      </div>`).join('')}
-    </div>
-  </div>`;
+  `;
 }
 
 const convImgs=['img/tramites.png','img/cd-judicial.jpeg','img/marco-juridico.jpeg'];
