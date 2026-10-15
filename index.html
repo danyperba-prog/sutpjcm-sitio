@@ -408,8 +408,10 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 .bd-apply{background:var(--g);color:#fff;font-size:13px;font-weight:700;padding:9px 20px}
 .bd-apply:hover{background:var(--gd)}
 /* MARCO JURÍDICO GRID */
-.juridico-layout{display:grid;grid-template-columns:1fr 280px;gap:24px;align-items:start}
-.juridico-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.juridico-layout{display:block}
+.juridico-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;justify-items:center}
+.juridico-grid .jur-card{width:100%}
+.juridico-grid .jur-card:last-child:nth-child(odd){grid-column:1/-1;max-width:calc(50% - 8px);margin:0 auto}
 .jur-card{background:#fff;border:1px solid rgba(191,200,198,.4);border-radius:14px;overflow:hidden;transition:box-shadow .2s}
 .jur-card.open{box-shadow:0 4px 20px rgba(0,64,59,.12);border-color:var(--g)}
 .jur-card-top{padding:22px;cursor:pointer;display:flex;flex-direction:column;gap:12px}
