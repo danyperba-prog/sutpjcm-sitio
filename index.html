@@ -2189,7 +2189,7 @@ function setDirFiltro(f){
   },100);
 }
 function renderTimeline(){document.getElementById('timeline-list').innerHTML=timelineData.map(t=>`<div class="tli${t.hl?' hl':''}"><div class="tldot"></div><div class="tlyear">${t.year}</div><div class="tlcard"><h4>${t.title}</h4><p>${t.desc}</p></div></div>`).join('');}
-function renderNotas(){document.getElementById('notas-list').innerHTML=notasData.map(n=>`<div class="nota-card"><span class="nota-badge"><i class="ti ti-news" style="font-size:10px"></i> ${n.fuente}</span><div class="nota-body"><h4>${n.titulo}</h4><p>${n.resumen}</p><div class="nota-meta"><span><i class="ti ti-calendar" style="font-size:11px"></i> ${n.fecha}</span><a href="${n.url}"><i class="ti ti-external-link" style="font-size:11px"></i> Ver nota</a></div></div></div>`).join('');}
+function renderNotas(){document.getElementById('notas-list').innerHTML=blogData.map((p,i)=>`<div class="nota-card" style="cursor:pointer" onclick="showPage('post',null);showPostPage(${i})"><span class="nota-badge"><i class="ti ti-news" style="font-size:10px"></i> ${p.tag}</span><div class="nota-body"><h4>${p.title}</h4><p>${p.excerpt}</p><div class="nota-meta"><span><i class="ti ti-calendar" style="font-size:11px"></i> ${p.date}</span><span><i class="ti ti-clock" style="font-size:11px"></i> ${p.read}</span></div></div></div>`).join('');}
 
 function toggleCard(id){document.getElementById(id).classList.toggle('open');}
 function switchTab(prefix,i,tab,btn){
