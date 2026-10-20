@@ -853,28 +853,7 @@ body{font-family:'Public Sans',system-ui,sans-serif;font-size:18px;line-height:1
 
 <!-- CARRUSEL -->
 <div class="carousel show" id="carousel">
-  <div class="c-track" id="c-track">
-    <div class="slide">
-      <img class="sbg" src="img/1.jpg" alt="Registro sindical SMDPJ ante el Tribunal Federal de Conciliación y Arbitraje">
-      <div class="slide-ov"></div>
-      <div class="sc"><div class="slbl"><i class="ti ti-certificate" style="font-size:11px;margin-right:4px"></i> Registro oficial</div><div class="stitle">SMDPJ — Registro ante el Tribunal Federal de Conciliación y Arbitraje</div><div class="sdesc">Formalización del sindicato y obtención del registro oficial que acredita nuestra representación.</div></div>
-    </div>
-    <div class="slide">
-      <img class="sbg" src="img/2.jpg" alt="Representantes del SMDPJ en el Tribunal Federal">
-      <div class="slide-ov"></div>
-      <div class="sc"><div class="slbl"><i class="ti ti-handshake" style="font-size:11px;margin-right:4px"></i> Representación sindical</div><div class="stitle">Gestión y defensa de los derechos de nuestros agremiados</div><div class="sdesc">El SMDPJ trabaja de manera continua ante las instancias para garantizar tus derechos laborales.</div></div>
-    </div>
-    <div class="slide">
-      <img class="sbg" src="img/3.jpg" alt="Sesión en el Salón de Plenos del Tribunal Federal">
-      <div class="slide-ov"></div>
-      <div class="sc"><div class="slbl"><i class="ti ti-gavel" style="font-size:11px;margin-right:4px"></i> Vida sindical democrática</div><div class="stitle">Participación activa en el Salón de Plenos "Presidente Adolfo López Mateos"</div><div class="sdesc">Nuestras gestiones se llevan ante las más altas instancias para defender a los trabajadores del Poder Judicial.</div></div>
-    </div>
-    <div class="slide">
-      <img class="sbg" src="img/4.jpg" alt="Audiencia ante el Tribunal Federal de Conciliación y Arbitraje">
-      <div class="slide-ov"></div>
-      <div class="sc"><div class="slbl"><i class="ti ti-scale" style="font-size:11px;margin-right:4px"></i> Defensa laboral</div><div class="stitle">Representación ante el Tribunal Federal de Conciliación y Arbitraje</div><div class="sdesc">Defendemos con firmeza los derechos de cada uno de nuestros agremiados en todas las instancias legales.</div></div>
-    </div>
-  </div>
+  <div class="c-track" id="c-track"></div>
   <div class="c-arrows">
     <button class="c-arr" onclick="prevSlide()"><i class="ti ti-chevron-left"></i></button>
     <button class="c-arr" onclick="nextSlide()"><i class="ti ti-chevron-right"></i></button>
@@ -2183,19 +2162,30 @@ function switchTab(prefix,i,tab,btn){
 // CARRUSEL
 const ctrack=document.getElementById('c-track');
 const cdots=document.getElementById('c-dots');
-const totalSlides=4;
-let cur=0,ctimer;
-for(let i=0;i<totalSlides;i++){const d=document.createElement('button');d.className='cdot'+(i===0?' active':'');d.onclick=()=>goTo(i);cdots.appendChild(d);}
+let cur=0,ctimer,totalSlides=3;
+function initCarousel(){
+  const posts=blogData.slice(0,3);
+  totalSlides=posts.length||1;
+  ctrack.innerHTML=posts.map((p,i)=>`
+    <div class="slide" style="cursor:pointer" onclick="showPage('post',null);showPostPage(${i})">
+      <img class="sbg" src="${p.img}" onerror="this.src='${p.fallbackImg||'img/blog.avif'}'" alt="${p.title}" loading="${i===0?'eager':'lazy'}">
+      <div class="slide-ov"></div>
+      <div class="sc"><div class="slbl"><i class="ti ti-news" style="font-size:11px;margin-right:4px"></i> ${p.tag}</div><div class="stitle">${p.title}</div><div class="sdesc">${p.excerpt.substring(0,120)}...</div></div>
+    </div>`).join('');
+  cdots.innerHTML='';
+  for(let i=0;i<totalSlides;i++){const d=document.createElement('button');d.className='cdot'+(i===0?' active':'');d.onclick=()=>goTo(i);cdots.appendChild(d);}
+  goTo(0);
+  startTimer();
+}
 function goTo(n){cur=n;ctrack.style.transform=`translateX(-${n*100}%)`;document.querySelectorAll('.cdot').forEach((d,i)=>d.className='cdot'+(i===n?' active':''));}
 function nextSlide(){goTo((cur+1)%totalSlides);}
 function prevSlide(){goTo((cur-1+totalSlides)%totalSlides);}
-function startTimer(){ctimer=setInterval(nextSlide,5000);}
+function startTimer(){clearInterval(ctimer);ctimer=setInterval(nextSlide,5000);}
 document.getElementById('carousel').addEventListener('mouseenter',()=>clearInterval(ctimer));
 document.getElementById('carousel').addEventListener('mouseleave',startTimer);
 let touchX=0;
 ctrack.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;},{passive:true});
 ctrack.addEventListener('touchend',e=>{const d=touchX-e.changedTouches[0].clientX;if(Math.abs(d)>50)d>0?nextSlide():prevSlide();});
-startTimer();
 
 // DRAWER
 function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('drawer-overlay').classList.add('open');document.body.style.overflow='hidden';}
@@ -2217,6 +2207,7 @@ async function init(){
   if(SHEET_ID!=='TU_ID_AQUI'){
     await Promise.all([cargarBlog(),cargarConvocatorias(),cargarDirectorio()]);
   }
+  initCarousel();
   renderLatestNews();
   renderBlog();renderBlogFilters();
   renderTramites();
