@@ -1540,7 +1540,7 @@ async function cargarDirectorio(){
   try{
     const res=await fetch(sheetUrl(SHEET_DIR));
     if(!res.ok)return false;
-    const rows=parseCSV(await res.text());
+    const rows=parseCSV((await res.text()).replace(/^﻿/,''));
     if(!rows.length)return false;
     const mapa={};
     rows.filter(r=>r['Nombre']).forEach(r=>{
