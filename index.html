@@ -1539,12 +1539,14 @@ async function cargarConvocatorias(){
 async function cargarDirectorio(){
   try{
     const res=await fetch(sheetUrl(SHEET_DIR));
-    if(!res.ok)return false;
-    const rows=parseCSV((await res.text()).replace(/^﻿/,''));
+    if(!res.ok){console.log('DIR fetch error',res.status);return false;}
+    const text=(await res.text()).replace(/^﻿/,'');
+    const rows=parseCSV(text);
+    console.log('DIR rows:',rows.length, rows.length?Object.keys(rows[0]):[]);
     if(!rows.length)return false;
     const mapa={};
     rows.filter(r=>r['Nombre']).forEach(r=>{
-      const area=r['Área']||'General';
+      const area=r['Área']||r[Object.keys(r).find(k=>k.includes('rea'))]||'General';
       if(!mapa[area])mapa[area]={area,icon:r['Icono']||'ti-users',personas:[]};
       mapa[area].personas.push({nombre:r['Nombre'],cargo:r['Cargo']||'',ext:r['Extensión']||'',correo:r['Correo']||''});
     });
